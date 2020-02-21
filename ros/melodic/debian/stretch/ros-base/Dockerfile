@@ -2,6 +2,12 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM ros:melodic-ros-core-stretch
 
+# install packages
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-melodic-ros-base=1.4.1-0* \

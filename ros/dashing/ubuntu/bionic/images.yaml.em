@@ -19,6 +19,8 @@ images:
             - docker_templates
         ros2_packages:
             - ros-base
+        upstream_packages:
+            - build-essential
     desktop:
         base_image: @(user_name):@(ros2distro_name)-ros-base-@(os_code_name)
         maintainer_name: @(maintainer_name)

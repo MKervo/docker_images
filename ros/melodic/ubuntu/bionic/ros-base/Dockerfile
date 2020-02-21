@@ -1,6 +1,12 @@
 # This is an auto generated Dockerfile for ros:ros-base
 # generated from docker_images/create_ros_image.Dockerfile.em
-FROM ros:melodic-ros-core-bionic
+FROM ros:melodic-ros-core-bionic-no-recommends
+
+# install packages
+RUN apt-get update && apt-get install -q -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

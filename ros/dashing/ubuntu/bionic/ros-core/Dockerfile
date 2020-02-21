@@ -47,6 +47,7 @@ RUN colcon mixin add default \
       https://raw.githubusercontent.com/colcon/colcon-metadata-repository/master/index.yaml && \
     colcon metadata update
 
+
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-dashing-ros-core=0.7.3-1* \
