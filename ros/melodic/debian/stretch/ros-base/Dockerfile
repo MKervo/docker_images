@@ -1,6 +1,6 @@
 # This is an auto generated Dockerfile for ros:ros-base
 # generated from docker_images/create_ros_image.Dockerfile.em
-FROM ros:melodic-ros-core-stretch-no-recommends
+FROM ros:melodic-ros-core-stretch
 
 # install bootstrap tools
 RUN apt-get update && apt-get install --no-install-recommends -y \

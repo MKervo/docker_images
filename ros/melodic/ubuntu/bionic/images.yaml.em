@@ -12,7 +12,7 @@ images:
         ros_packages:
             - ros-core
     ros-base:
-        base_image: @(user_name):@(rosdistro_name)-ros-core-@(os_code_name)-no-recommends
+        base_image: @(user_name):@(rosdistro_name)-ros-core-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
@@ -21,7 +21,7 @@ images:
             - ros-base
         bootstrap_ros_tools:
     robot:
-        base_image: @(user_name):@(rosdistro_name)-ros-base-@(os_code_name)-no-recommends
+        base_image: @(user_name):@(rosdistro_name)-ros-base-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
@@ -29,7 +29,7 @@ images:
         ros_packages:
             - robot
     perception:
-        base_image: @(user_name):@(rosdistro_name)-ros-base-@(os_code_name)-no-recommends
+        base_image: @(user_name):@(rosdistro_name)-ros-base-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
@@ -37,7 +37,7 @@ images:
         ros_packages:
             - perception
     desktop:
-        base_image: @(user_name):@(rosdistro_name)-robot-@(os_code_name)-no-recommends
+        base_image: @(user_name):@(rosdistro_name)-robot-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
@@ -45,7 +45,7 @@ images:
         ros_packages:
             - desktop
     desktop-full:
-        base_image: osrf/@(user_name):@(rosdistro_name)-desktop-@(os_code_name)-no-recommends
+        base_image: osrf/@(user_name):@(rosdistro_name)-desktop-@(os_code_name)
         maintainer_name: @(maintainer_name)
         template_name: docker_images/create_ros_image.Dockerfile.em
         template_packages:
