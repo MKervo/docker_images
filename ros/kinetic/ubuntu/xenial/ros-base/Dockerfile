@@ -2,11 +2,17 @@
 # generated from docker_images/create_ros_image.Dockerfile.em
 FROM ros:kinetic-ros-core-xenial-no-recommends
 
-# install packages
-RUN apt-get update && apt-get install -q -y --no-install-recommends \
+# install bootstrap tools
+RUN apt-get update && apt-get install --no-install-recommends -y \
     build-essential \
+    python-rosdep \
+    python-rosinstall \
+    python-vcstools \
     && rm -rf /var/lib/apt/lists/*
 
+# bootstrap rosdep
+RUN rosdep init && \
+  rosdep update --rosdistro $ROS_DISTRO
 
 # install ros packages
 RUN apt-get update && apt-get install -y --no-install-recommends \

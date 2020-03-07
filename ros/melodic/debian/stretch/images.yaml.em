@@ -19,8 +19,7 @@ images:
             - docker_templates
         ros_packages:
             - ros-base
-        upstream_packages:
-            - build-essential
+        bootstrap_ros_tools:
     robot:
         base_image: @(user_name):@(rosdistro_name)-ros-base-@(os_code_name)-no-recommends
         maintainer_name: @(maintainer_name)
